@@ -1,0 +1,162 @@
+<template>
+  <DefaultLayout>
+    <main class="max-w-3xl mx-auto px-4 py-10">
+      <!-- BREADCRUMB -->
+      <div class="mb-5">
+        <p class="text-xs text-gray-500">
+          Dashboard
+          <span class="mx-2">/</span>
+          Mulai Ujian
+          <span class="mx-2">/</span>
+          Verifikasi Token
+        </p>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-white border border-gray-200 rounded-sm shadow-sm">
+        <!-- HEADER -->
+        <div class="px-6 py-5 border-b border-gray-200">
+          <div class="flex items-center">
+            <div
+              class="w-10 h-10 bg-blue-100 rounded-sm flex items-center justify-center mr-4"
+            >
+              <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="text-lg font-semibold text-gray-800">
+                Verifikasi Token Ujian
+              </h2>
+              <p class="text-xs text-gray-500 mt-1">
+                Masukkan token yang diberikan oleh pengawas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="p-6">
+          <!-- DETAIL UJIAN -->
+          <div class="bg-gray-50 border border-gray-200 rounded-sm p-4 mb-6">
+            <h3 class="text-sm font-semibold text-gray-800 mb-4">
+              Informasi Ujian
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3">
+              <div>
+                <p class="text-xs text-gray-500">Mata Pelajaran</p>
+                <p class="text-sm font-medium text-gray-800 mt-1">Matematika</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Kelas</p>
+                <p class="text-sm font-medium text-gray-800 mt-1">XII IPA 1</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Jumlah Soal</p>
+                <p class="text-sm font-medium text-gray-800 mt-1">40 Soal</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Durasi</p>
+                <p class="text-sm font-medium text-gray-800 mt-1">60 Menit</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Jadwal</p>
+                <p class="text-sm font-medium text-gray-800 mt-1">
+                  08:00 - 09:00 WIB
+                </p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-500">Pengawas</p>
+                <p class="text-sm font-medium text-gray-800 mt-1">
+                  Ahmad Wijaya, S.Pd.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- WARNING -->
+          <div
+            class="flex items-start border-l-4 border-yellow-400 bg-yellow-50 px-4 py-3 mb-6"
+          >
+            <svg
+              class="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <div>
+              <p class="text-xs font-semibold text-yellow-800">Perhatian</p>
+              <p class="text-xs text-yellow-700 mt-1 leading-5">
+                Pastikan data ujian sudah benar sebelum memasukkan token.
+                Setelah ujian dimulai, waktu pengerjaan akan berjalan dan
+                tidak dapat diulang.
+              </p>
+            </div>
+          </div>
+
+          <!-- TOKEN FORM -->
+          <form @submit.prevent="handleVerify">
+            <label for="token" class="block text-sm font-medium text-gray-700 mb-2">
+              Token Ujian
+            </label>
+            <input
+              id="token"
+              v-model="token"
+              type="text"
+              placeholder="Contoh: MAT-2015"
+              autocomplete="off"
+              maxlength="20"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-sm text-center text-lg font-semibold tracking-widest uppercase placeholder-gray-400 placeholder-normal focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            />
+            <p class="text-xs text-gray-500 mt-2">
+              Masukkan token yang diberikan oleh pengawas ujian.
+            </p>
+
+            <!-- BUTTON -->
+            <div
+              class="flex flex-col-reverse sm:flex-row sm:justify-between gap-3 mt-6"
+            >
+              <RouterLink
+                to="/daftar"
+                class="px-5 py-2.5 border border-gray-300 text-gray-600 hover:bg-gray-50 text-sm text-center rounded-sm"
+              >
+                Kembali
+              </RouterLink>
+              <button
+                type="submit"
+                class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-sm"
+              >
+                Verifikasi &amp; Mulai Ujian
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="text-center mt-6">
+        <p class="text-xs text-gray-500">
+          &copy; 2015 Aplikasi Ujian Online
+        </p>
+        <p class="text-xs text-gray-400 mt-1">Hubungi pengawas jika mengalami masalah.</p>
+      </footer>
+    </main>
+  </DefaultLayout>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+import DefaultLayout from '../layouts/DefaultLayout.vue';
+
+const router = useRouter();
+const token = ref('');
+
+function handleVerify() {
+  router.push('/sesi-ujian');
+}
+</script>
