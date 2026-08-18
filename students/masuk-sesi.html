@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sesi Ujian - Matematika</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-700">
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+    <header class="bg-blue-600 shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="min-h-16 py-3 flex items-center justify-between">
+
+                <!-- INFORMASI UJIAN -->
+                <div class="flex items-center">
+
+                    <div class="w-9 h-9 bg-white rounded-sm
+                                flex items-center justify-center mr-3">
+
+                        <span class="text-blue-600 font-bold">
+                            U
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h1 class="text-white font-semibold text-sm sm:text-base">
+                            Ujian Matematika
+                        </h1>
+
+                        <p class="text-blue-200 text-xs">
+                            Budi Santoso &nbsp;|&nbsp; XII IPA 1
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TIMER -->
+                <div class="flex items-center">
+
+                    <div class="text-right mr-3 hidden sm:block">
+
+                        <p class="text-blue-200 text-xs">
+                            Sisa Waktu
+                        </p>
+
+                        <p class="text-white text-xs">
+                            Waktu pengerjaan
+                        </p>
+
+                    </div>
+
+
+                    <div class="bg-blue-700 border border-blue-500
+                                px-3 sm:px-4 py-2 rounded-sm">
+
+                        <div class="flex items-center">
+
+                            <svg
+                                class="w-5 h-5 text-white mr-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+
+                            <span
+                                id="timer"
+                                class="text-white font-bold text-lg tracking-wider"
+                            >
+                                59:58
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+    <main class="max-w-7xl mx-auto px-4 py-5">
+
+
+        <!-- INFORMASI ATAS -->
+        <div class="bg-white border border-gray-200
+                    rounded-sm shadow-sm px-5 py-4 mb-5">
+
+            <div class="flex flex-col sm:flex-row
+                        sm:items-center sm:justify-between gap-3">
+
+                <div>
+
+                    <p class="text-xs text-gray-500">
+                        Mata Pelajaran
+                    </p>
+
+                    <h2 class="text-base font-semibold text-gray-800">
+                        Matematika
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <p class="text-xs text-gray-500">
+                        Progress Pengerjaan
+                    </p>
+
+                    <div class="flex items-center mt-1">
+
+                        <div class="w-32 h-2 bg-gray-200 rounded-full mr-3">
+
+                            <div
+                                id="progressBar"
+                                class="h-2 bg-blue-600 rounded-full"
+                                style="width: 10%;"
+                            ></div>
+
+                        </div>
+
+                        <span
+                            id="progressText"
+                            class="text-xs font-medium text-gray-700"
+                        >
+                            4 / 40
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             LAYOUT UJIAN
+        ====================================================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
+
+
+            <!-- =================================================
+                 BAGIAN SOAL
+            ================================================== -->
+            <section class="lg:col-span-3">
+
+                <div class="bg-white border border-gray-200
+                            rounded-sm shadow-sm">
+
+
+                    <!-- HEADER SOAL -->
+                    <div class="px-5 py-4 border-b border-gray-200">
+
+                        <div class="flex items-center justify-between">
+
+                            <div>
+
+                                <p class="text-xs text-gray-500">
+                                    Soal Nomor
+                                </p>
+
+                                <h3
+                                    id="questionNumber"
+                                    class="text-lg font-semibold text-gray-800"
+                                >
+                                    1
+                                </h3>
+
+                            </div>
+
+
+                            <span
+                                class="px-3 py-1 bg-blue-50
+                                       text-blue-600 text-xs
+                                       rounded-sm"
+                            >
+                                Pilihan Ganda
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ISI SOAL -->
+                    <div class="p-5 sm:p-7">
+
+
+                        <div class="mb-7">
+
+                            <p
+                                id="questionText"
+                                class="text-base sm:text-lg
+                                       leading-7 text-gray-800"
+                            >
+                                Jika 2x + 6 = 14, maka nilai x adalah ...
+                            </p>
+
+                        </div>
+
+
+                        <!-- PILIHAN -->
+                        <div
+                            id="options"
+                            class="space-y-3"
+                        >
+
+
+                            <!-- A -->
+                            <label
+                                class="option block cursor-pointer"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    value="A"
+                                    class="hidden"
+                                >
+
+                                <div
+                                    class="option-box border
+                                           border-gray-300
+                                           rounded-sm
+                                           px-4 py-4
+                                           hover:bg-blue-50
+                                           hover:border-blue-400
+                                           transition"
+                                >
+
+                                    <div class="flex items-center">
+
+                                        <span
+                                            class="option-letter
+                                                   w-8 h-8
+                                                   border
+                                                   border-gray-300
+                                                   rounded-full
+                                                   flex items-center
+                                                   justify-center
+                                                   text-sm
+                                                   font-semibold
+                                                   mr-4"
+                                        >
+                                            A
+                                        </span>
+
+                                        <span class="text-sm">
+                                            2
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+
+                            <!-- B -->
+                            <label
+                                class="option block cursor-pointer"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    value="B"
+                                    class="hidden"
+                                >
+
+                                <div
+                                    class="option-box border
+                                           border-gray-300
+                                           rounded-sm
+                                           px-4 py-4
+                                           hover:bg-blue-50
+                                           hover:border-blue-400
+                                           transition"
+                                >
+
+                                    <div class="flex items-center">
+
+                                        <span
+                                            class="option-letter
+                                                   w-8 h-8
+                                                   border
+                                                   border-gray-300
+                                                   rounded-full
+                                                   flex items-center
+                                                   justify-center
+                                                   text-sm
+                                                   font-semibold
+                                                   mr-4"
+                                        >
+                                            B
+                                        </span>
+
+                                        <span class="text-sm">
+                                            4
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+
+                            <!-- C -->
+                            <label
+                                class="option block cursor-pointer"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    value="C"
+                                    class="hidden"
+                                >
+
+                                <div
+                                    class="option-box border
+                                           border-gray-300
+                                           rounded-sm
+                                           px-4 py-4
+                                           hover:bg-blue-50
+                                           hover:border-blue-400
+                                           transition"
+                                >
+
+                                    <div class="flex items-center">
+
+                                        <span
+                                            class="option-letter
+                                                   w-8 h-8
+                                                   border
+                                                   border-gray-300
+                                                   rounded-full
+                                                   flex items-center
+                                                   justify-center
+                                                   text-sm
+                                                   font-semibold
+                                                   mr-4"
+                                        >
+                                            C
+                                        </span>
+
+                                        <span class="text-sm">
+                                            6
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+
+                            <!-- D -->
+                            <label
+                                class="option block cursor-pointer"
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="answer"
+                                    value="D"
+                                    class="hidden"
+                                >
+
+                                <div
+                                    class="option-box border
+                                           border-gray-300
+                                           rounded-sm
+                                           px-4 py-4
+                                           hover:bg-blue-50
+                                           hover:border-blue-400
+                                           transition"
+                                >
+
+                                    <div class="flex items-center">
+
+                                        <span
+                                            class="option-letter
+                                                   w-8 h-8
+                                                   border
+                                                   border-gray-300
+                                                   rounded-full
+                                                   flex items-center
+                                                   justify-center
+                                                   text-sm
+                                                   font-semibold
+                                                   mr-4"
+                                        >
+                                            D
+                                        </span>
+
+                                        <span class="text-sm">
+                                            8
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- NAVIGASI -->
+                        <div
+                            class="flex flex-col-reverse
+                                   sm:flex-row
+                                   sm:items-center
+                                   sm:justify-between
+                                   gap-3
+                                   border-t
+                                   border-gray-200
+                                   mt-8 pt-5"
+                        >
+
+                            <button
+                                id="prevButton"
+                                onclick="previousQuestion()"
+                                class="px-5 py-2.5
+                                       border border-gray-300
+                                       text-gray-600
+                                       hover:bg-gray-50
+                                       text-sm rounded-sm"
+                            >
+                                ← Sebelumnya
+                            </button>
+
+
+                            <button
+                                id="nextButton"
+                                onclick="nextQuestion()"
+                                class="px-5 py-2.5
+                                       bg-blue-600
+                                       hover:bg-blue-700
+                                       text-white
+                                       text-sm
+                                       rounded-sm"
+                            >
+                                Berikutnya →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DAFTAR NOMOR SOAL
+            ================================================== -->
+            <aside class="lg:col-span-1">
+
+                <div class="bg-white border border-gray-200
+                            rounded-sm shadow-sm
+                            lg:sticky lg:top-5">
+
+
+                    <!-- HEADER -->
+                    <div class="px-5 py-4 border-b border-gray-200">
+
+                        <h3 class="text-sm font-semibold text-gray-800">
+                            Daftar Soal
+                        </h3>
+
+                        <p class="text-xs text-gray-500 mt-1">
+                            Pilih nomor untuk berpindah soal.
+                        </p>
+
+                    </div>
+
+
+                    <!-- NOMOR -->
+                    <div class="p-4">
+
+                        <div
+                            id="questionList"
+                            class="grid grid-cols-5 sm:grid-cols-8
+                                   lg:grid-cols-5 gap-2"
+                        >
+                        </div>
+
+
+                        <!-- LEGEND -->
+                        <div
+                            class="border-t border-gray-200
+                                   mt-5 pt-4 space-y-2"
+                        >
+
+                            <div class="flex items-center">
+
+                                <span
+                                    class="w-4 h-4 bg-blue-600
+                                           rounded-sm mr-2"
+                                ></span>
+
+                                <span class="text-xs text-gray-500">
+                                    Soal aktif
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center">
+
+                                <span
+                                    class="w-4 h-4 bg-green-500
+                                           rounded-sm mr-2"
+                                ></span>
+
+                                <span class="text-xs text-gray-500">
+                                    Sudah dijawab
+                                </span>
+
+                            </div>
+
+
+                            <div class="flex items-center">
+
+                                <span
+                                    class="w-4 h-4 bg-gray-100
+                                           border border-gray-300
+                                           rounded-sm mr-2"
+                                ></span>
+
+                                <span class="text-xs text-gray-500">
+                                    Belum dijawab
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SELESAI -->
+                        <button
+                            onclick="finishExam()"
+                            class="w-full mt-5
+                                   px-4 py-2.5
+                                   bg-green-600
+                                   hover:bg-green-700
+                                   text-white
+                                   text-sm font-medium
+                                   rounded-sm"
+                        >
+                            Selesai Ujian
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="text-center py-7">
+
+            <p class="text-xs text-gray-500">
+                Aplikasi Ujian Online &copy; 2015
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT DEMO
+    ========================================================== -->
+
+    <script>
+
+        /*
+         * Data soal demo.
+         *
+         * Pada aplikasi sebenarnya, data ini biasanya
+         * dikirim dari backend/database.
+         */
+
+        const questions = [
+
+            {
+                question: "Jika 2x + 6 = 14, maka nilai x adalah ...",
+                options: {
+                    A: "2",
+                    B: "4",
+                    C: "6",
+                    D: "8"
+                }
+            },
+
+            {
+                question: "Hasil dari 15 × 4 adalah ...",
+                options: {
+                    A: "40",
+                    B: "50",
+                    C: "60",
+                    D: "70"
+                }
+            },
+
+            {
+                question: "Nilai dari 100 ÷ 5 adalah ...",
+                options: {
+                    A: "10",
+                    B: "15",
+                    C: "20",
+                    D: "25"
+                }
+            },
+
+            {
+                question: "Jika x = 5, maka nilai 3x + 2 adalah ...",
+                options: {
+                    A: "12",
+                    B: "15",
+                    C: "17",
+                    D: "20"
+                }
+            },
+
+            {
+                question: "Hasil dari 25 + 35 adalah ...",
+                options: {
+                    A: "50",
+                    B: "55",
+                    C: "60",
+                    D: "65"
+                }
+            },
+
+            {
+                question: "Hasil dari 9 × 7 adalah ...",
+                options: {
+                    A: "54",
+                    B: "63",
+                    C: "72",
+                    D: "81"
+                }
+            },
+
+            {
+                question: "Bentuk sederhana dari 2(x + 3) adalah ...",
+                options: {
+                    A: "2x + 3",
+                    B: "2x + 5",
+                    C: "2x + 6",
+                    D: "2x + 8"
+                }
+            },
+
+            {
+                question: "Hasil dari 81 ÷ 9 adalah ...",
+                options: {
+                    A: "7",
+                    B: "8",
+                    C: "9",
+                    D: "10"
+                }
+            },
+
+            {
+                question: "Nilai dari 12² adalah ...",
+                options: {
+                    A: "124",
+                    B: "144",
+                    C: "154",
+                    D: "164"
+                }
+            },
+
+            {
+                question: "Jika x + 10 = 25, maka nilai x adalah ...",
+                options: {
+                    A: "10",
+                    B: "15",
+                    C: "20",
+                    D: "25"
+                }
+            },
+
+            {
+                question: "Hasil dari 7² adalah ...",
+                options: {
+                    A: "14",
+                    B: "21",
+                    C: "42",
+                    D: "49"
+                }
+            },
+
+            {
+                question: "Hasil dari 50 - 17 adalah ...",
+                options: {
+                    A: "23",
+                    B: "33",
+                    C: "43",
+                    D: "53"
+                }
+            },
+
+            {
+                question: "Nilai dari 5 × 8 + 2 adalah ...",
+                options: {
+                    A: "32",
+                    B: "40",
+                    C: "42",
+                    D: "48"
+                }
+            },
+
+            {
+                question: "Hasil dari 144 ÷ 12 adalah ...",
+                options: {
+                    A: "10",
+                    B: "11",
+                    C: "12",
+                    D: "14"
+                }
+            },
+
+            {
+                question: "Jika 3x = 21, maka nilai x adalah ...",
+                options: {
+                    A: "5",
+                    B: "6",
+                    C: "7",
+                    D: "8"
+                }
+            }
+
+        ];
+
+
+        /*
+         * Simpan jawaban siswa.
+         */
+
+        const answers = {};
+
+        let currentQuestion = 0;
+
+
+        /*
+         * Render daftar nomor soal.
+         */
+
+        function renderQuestionList() {
+
+            const list =
+                document.getElementById("questionList");
+
+            list.innerHTML = "";
+
+            questions.forEach((question, index) => {
+
+                const button =
+                    document.createElement("button");
+
+                button.innerText = index + 1;
+
+                button.className =
+                    "question-number w-full h-9 " +
+                    "text-xs font-medium rounded-sm " +
+                    "border border-gray-300 " +
+                    "bg-gray-100 text-gray-600 " +
+                    "hover:bg-blue-50 " +
+                    "hover:border-blue-400";
+
+                if (index === currentQuestion) {
+
+                    button.className =
+                        "question-number w-full h-9 " +
+                        "text-xs font-medium rounded-sm " +
+                        "bg-blue-600 text-white " +
+                        "border border-blue-600";
+
+                }
+
+                if (answers[index]) {
+
+                    button.className =
+                        "question-number w-full h-9 " +
+                        "text-xs font-medium rounded-sm " +
+                        "bg-green-500 text-white " +
+                        "border border-green-500";
+
+                }
+
+                if (index === currentQuestion) {
+
+                    button.className =
+                        "question-number w-full h-9 " +
+                        "text-xs font-medium rounded-sm " +
+                        "bg-blue-600 text-white " +
+                        "border border-blue-600";
+
+                }
+
+                button.onclick = function () {
+
+                    saveCurrentAnswer();
+
+                    currentQuestion = index;
+
+                    renderQuestion();
+
+                };
+
+                list.appendChild(button);
+
+            });
+
+        }
+
+
+        /*
+         * Render soal.
+         */
+
+        function renderQuestion() {
+
+            const question =
+                questions[currentQuestion];
+
+
+            document.getElementById(
+                "questionNumber"
+            ).innerText =
+                currentQuestion + 1;
+
+
+            document.getElementById(
+                "questionText"
+            ).innerText =
+                question.question;
+
+
+            const options =
+                document.querySelectorAll(
+                    'input[name="answer"]'
+                );
+
+
+            const optionBoxes =
+                document.querySelectorAll(
+                    ".option-box"
+                );
+
+
+            const letters =
+                ["A", "B", "C", "D"];
+
+
+            options.forEach((input, index) => {
+
+                input.value = letters[index];
+
+                input.checked =
+                    answers[currentQuestion] ===
+                    letters[index];
+
+            });
+
+
+            optionBoxes.forEach((box, index) => {
+
+                const letter =
+                    letters[index];
+
+                const selected =
+                    answers[currentQuestion] ===
+                    letter;
+
+
+                if (selected) {
+
+                    box.classList.remove(
+                        "border-gray-300"
+                    );
+
+                    box.classList.add(
+                        "border-blue-500",
+                        "bg-blue-50"
+                    );
+
+                } else {
+
+                    box.classList.remove(
+                        "border-blue-500",
+                        "bg-blue-50"
+                    );
+
+                    box.classList.add(
+                        "border-gray-300"
+                    );
+
+                }
+
+            });
+
+
+            /*
+             * Tombol sebelumnya.
+             */
+
+            const previous =
+                document.getElementById(
+                    "prevButton"
+                );
+
+            if (currentQuestion === 0) {
+
+                previous.disabled = true;
+
+                previous.classList.add(
+                    "opacity-50",
+                    "cursor-not-allowed"
+                );
+
+            } else {
+
+                previous.disabled = false;
+
+                previous.classList.remove(
+                    "opacity-50",
+                    "cursor-not-allowed"
+                );
+
+            }
+
+
+            /*
+             * Tombol berikutnya.
+             */
+
+            const next =
+                document.getElementById(
+                    "nextButton"
+                );
+
+
+            if (
+                currentQuestion ===
+                questions.length - 1
+            ) {
+
+                next.innerText =
+                    "Soal Terakhir";
+
+            } else {
+
+                next.innerText =
+                    "Berikutnya →";
+
+            }
+
+
+            renderQuestionList();
+
+            updateProgress();
+
+        }
+
+
+        /*
+         * Simpan jawaban soal aktif.
+         */
+
+        function saveCurrentAnswer() {
+
+            const selected =
+                document.querySelector(
+                    'input[name="answer"]:checked'
+                );
+
+
+            if (selected) {
+
+                answers[currentQuestion] =
+                    selected.value;
+
+            }
+
+        }
+
+
+        /*
+         * Event pilihan jawaban.
+         */
+
+        document
+            .querySelectorAll(
+                'input[name="answer"]'
+            )
+            .forEach(input => {
+
+                input.addEventListener(
+                    "change",
+                    function () {
+
+                        answers[currentQuestion] =
+                            this.value;
+
+                        renderQuestion();
+
+                    }
+                );
+
+            });
+
+
+        /*
+         * Soal berikutnya.
+         */
+
+        function nextQuestion() {
+
+            saveCurrentAnswer();
+
+
+            if (
+                currentQuestion <
+                questions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                renderQuestion();
+
+            }
+
+        }
+
+
+        /*
+         * Soal sebelumnya.
+         */
+
+        function previousQuestion() {
+
+            saveCurrentAnswer();
+
+
+            if (currentQuestion > 0) {
+
+                currentQuestion--;
+
+                renderQuestion();
+
+            }
+
+        }
+
+
+        /*
+         * Progress pengerjaan.
+         */
+
+        function updateProgress() {
+
+            const answered =
+                Object.keys(answers).length;
+
+
+            const total =
+                questions.length;
+
+
+            const percentage =
+                (answered / total) * 100;
+
+
+            document.getElementById(
+                "progressBar"
+            ).style.width =
+                percentage + "%";
+
+
+            document.getElementById(
+                "progressText"
+            ).innerText =
+                answered + " / " + total;
+
+        }
+
+
+        /*
+         * Timer demo.
+         *
+         * 60 menit = 3600 detik.
+         */
+
+        let remainingTime = 60 * 60;
+
+
+        const timer =
+            document.getElementById(
+                "timer"
+            );
+
+
+        function updateTimer() {
+
+            const minutes =
+                Math.floor(
+                    remainingTime / 60
+                );
+
+            const seconds =
+                remainingTime % 60;
+
+
+            timer.innerText =
+                String(minutes).padStart(2, "0")
+                + ":" +
+                String(seconds).padStart(2, "0");
+
+
+            if (remainingTime <= 0) {
+
+                clearInterval(timerInterval);
+
+                finishExam();
+
+                return;
+
+            }
+
+
+            remainingTime--;
+
+        }
+
+
+        const timerInterval =
+            setInterval(
+                updateTimer,
+                1000
+            );
+
+
+        /*
+         * Selesai ujian.
+         */
+
+        function finishExam() {
+
+            saveCurrentAnswer();
+
+
+            const answered =
+                Object.keys(answers).length;
+
+
+            const total =
+                questions.length;
+
+
+            const confirmation =
+                confirm(
+                    "Anda telah menjawab " +
+                    answered +
+                    " dari " +
+                    total +
+                    " soal.\n\n" +
+                    "Apakah Anda yakin ingin mengakhiri ujian?"
+                );
+
+
+            if (confirmation) {
+
+                clearInterval(
+                    timerInterval
+                );
+
+                alert(
+                    "Ujian selesai.\n\n" +
+                    "Jawaban Anda telah disimpan."
+                );
+
+                /*
+                 * Pada aplikasi sebenarnya:
+                 *
+                 * window.location.href =
+                 * "/hasil-ujian";
+                 */
+
+            }
+
+        }
+
+
+        /*
+         * Inisialisasi halaman.
+         */
+        renderQuestion();
+        updateTimer();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hasil Ujian - Matematika</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-700">
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+    <header class="bg-blue-600 shadow-sm">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="h-16 flex items-center justify-between">
+
+                <!-- LOGO -->
+                <div class="flex items-center">
+
+                    <div class="w-9 h-9 bg-white rounded-sm
+                                flex items-center justify-center mr-3">
+
+                        <span class="text-blue-600 font-bold">
+                            U
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <h1 class="text-white font-semibold">
+                            Ujian Online
+                        </h1>
+
+                        <p class="text-blue-200 text-xs">
+                            Sistem Ujian Berbasis WEB
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- USER -->
+                <div class="flex items-center">
+
+                    <div class="hidden sm:block text-right mr-3">
+
+                        <p class="text-white text-sm font-medium">
+                            Budi Santoso
+                        </p>
+
+                        <p class="text-blue-200 text-xs">
+                            XII IPA 1
+                        </p>
+
+                    </div>
+
+
+                    <div class="w-9 h-9 rounded-full
+                                bg-blue-500
+                                border border-blue-400
+                                flex items-center justify-center">
+
+                        <span class="text-white text-sm font-semibold">
+                            BS
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+    <main class="max-w-6xl mx-auto px-4 py-6">
+
+
+        <!-- BREADCRUMB -->
+        <div class="mb-5">
+
+            <p class="text-xs text-gray-500">
+
+                Dashboard
+
+                <span class="mx-2">
+                    /
+                </span>
+
+                Hasil Ujian
+
+                <span class="mx-2">
+                    /
+                </span>
+
+                Matematika
+
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             SUCCESS MESSAGE
+        ================================================== -->
+        <div class="bg-white border border-gray-200
+                    rounded-sm shadow-sm
+                    p-5 mb-6">
+
+            <div class="flex items-start">
+
+                <div class="w-10 h-10 bg-green-100
+                            rounded-full
+                            flex items-center justify-center
+                            mr-4 flex-shrink-0">
+
+                    <svg
+                        class="w-5 h-5 text-green-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5 13l4 4L19 7"
+                        />
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <h2 class="text-lg font-semibold text-gray-800">
+                        Ujian Berhasil Diselesaikan
+                    </h2>
+
+                    <p class="text-sm text-gray-500 mt-1">
+                        Jawaban Anda telah berhasil disimpan.
+                        Berikut adalah ringkasan hasil ujian.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             INFO UJIAN
+        ================================================== -->
+        <div class="bg-white border border-gray-200
+                    rounded-sm shadow-sm mb-6">
+
+            <div class="px-5 py-4 border-b border-gray-200">
+
+                <h2 class="text-base font-semibold text-gray-800">
+                    Informasi Ujian
+                </h2>
+
+            </div>
+
+
+            <div class="p-5">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2
+                            lg:grid-cols-4 gap-5">
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Peserta
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            Budi Santoso
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            NIS
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            12001
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Mata Pelajaran
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            Matematika
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Kelas
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            XII IPA 1
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Tanggal
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            12 Mei 2015
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Waktu Mulai
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            08:00 WIB
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Waktu Selesai
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            08:47 WIB
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-gray-500">
+                            Durasi
+                        </p>
+
+                        <p class="text-sm font-medium text-gray-800 mt-1">
+                            47 Menit
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SCORE
+        ================================================== -->
+
+        <!-- =================================================
+             PREVIEW JAWABAN
+        ================================================== -->
+        <div class="bg-white border border-gray-200
+                    rounded-sm shadow-sm mb-6">
+
+
+            <!-- HEADER -->
+            <div class="px-5 py-4 border-b border-gray-200">
+
+                <div class="flex flex-col sm:flex-row
+                            sm:items-center
+                            sm:justify-between gap-2">
+
+                    <div>
+
+                        <h2 class="text-base font-semibold text-gray-800">
+                            Preview Jawaban
+                        </h2>
+
+                        <p class="text-xs text-gray-500 mt-1">
+                            Ringkasan jawaban yang telah Anda kerjakan.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="text-xs text-gray-500">
+                            40 Soal
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEGEND -->
+            <div class="px-5 py-4 bg-gray-50
+                        border-b border-gray-200">
+
+                <div class="flex flex-wrap gap-4">
+
+                    <div class="flex items-center">
+
+                        <span
+                            class="w-4 h-4 bg-green-500
+                                   rounded-sm mr-2"
+                        ></span>
+
+                        <span class="text-xs text-gray-600">
+                            Sudah di isi
+                        </span>
+
+                    </div>
+
+                    <div class="flex items-center">
+
+                        <span
+                            class="w-4 h-4 bg-gray-200
+                                   border border-gray-300
+                                   rounded-sm mr-2"
+                        ></span>
+
+                        <span class="text-xs text-gray-600">
+                            Tidak Dijawab
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ANSWER GRID -->
+            <div class="p-5">
+
+                <div
+                    class="grid grid-cols-5
+                           sm:grid-cols-8
+                           md:grid-cols-10
+                           gap-2"
+                >
+
+                    <!-- BENAR -->
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        1
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        2
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        3
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        4
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        5
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        6
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        7
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        8
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        9
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        10
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        11
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        12
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        13
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        14
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        15
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        16
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        17
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        18
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        19
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        20
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        21
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        22
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        23
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        24
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        25
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        26
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        27
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        28
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        29
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        30
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        31
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        32
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               hover:bg-green-600
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        33
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        34
+                    </button>
+
+                    <button
+                        class="h-10 bg-green-500
+                               text-white text-xs
+                               font-medium rounded-sm"
+                    >
+                        35
+                    </button>
+
+                    <!-- TIDAK DIJAWAB -->
+                    <button
+                        class="h-10 bg-gray-100
+                               border border-gray-300
+                               text-gray-500 text-xs
+                               font-medium rounded-sm"
+                    >
+                        36
+                    </button>
+
+                    <button
+                        class="h-10 bg-gray-100
+                               border border-gray-300
+                               text-gray-500 text-xs
+                               font-medium rounded-sm"
+                    >
+                        37
+                    </button>
+
+                    <button
+                        class="h-10 bg-gray-100
+                               border border-gray-300
+                               text-gray-500 text-xs
+                               font-medium rounded-sm"
+                    >
+                        38
+                    </button>
+
+                    <button
+                        class="h-10 bg-gray-100
+                               border border-gray-300
+                               text-gray-500 text-xs
+                               font-medium rounded-sm"
+                    >
+                        39
+                    </button>
+
+                    <button
+                        class="h-10 bg-gray-100
+                               border border-gray-300
+                               text-gray-500 text-xs
+                               font-medium rounded-sm"
+                    >
+                        40
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             DETAIL HASIL
+        ================================================== -->
+
+        <!-- =================================================
+             ACTION
+        ================================================== -->
+        <div class="flex flex-col sm:flex-row
+                    sm:justify-between
+                    gap-3">
+
+            <a
+                href="#"
+                class="px-5 py-2.5
+                       border border-gray-300
+                       bg-white
+                       hover:bg-gray-50
+                       text-gray-600
+                       text-sm
+                       text-center
+                       rounded-sm"
+            >
+                Kembali ke Dashboard
+            </a>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="text-center py-8">
+
+            <p class="text-xs text-gray-500">
+                Aplikasi Ujian Online &copy; 2015
+            </p>
+
+            <p class="text-xs text-gray-400 mt-1">
+                Sistem Informasi Akademik
+            </p>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>
